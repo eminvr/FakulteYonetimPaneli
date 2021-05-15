@@ -30,9 +30,9 @@ namespace FakulteYonetimPaneli
             this.Close();
         }
 
-
-        SqlConnection baglanti = new SqlConnection(@"Data Source = DESKTOP-VK83I53; Initial Catalog = Aydin; User ID = deneme; Password = 123456");
-        SqlConnection baglanti2 = new SqlConnection(@"Data Source = DESKTOP-VK83I53; Initial Catalog = Aydin; User ID = deneme; Password = 123456");
+        
+        SqlConnection baglanti = new SqlConnection(Anasayfa.sqlAdress);
+        SqlConnection baglanti2 = new SqlConnection(Anasayfa.sqlAdress);
 
         void mukerrer()
         {

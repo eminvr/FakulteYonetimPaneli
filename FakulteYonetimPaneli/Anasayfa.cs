@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ namespace FakulteYonetimPaneli
 {
     public partial class Anasayfa : Form
     {
+        public static string sqlAdress = File.ReadAllText(Path.Combine(Application.StartupPath,"text.txt"));
         public static Button[] butonlar = new Button[16];
         public Anasayfa()
         {

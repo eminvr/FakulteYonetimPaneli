@@ -18,7 +18,7 @@ namespace FakulteYonetimPaneli
         SqlDataAdapter da;
         void OgrenciGetir()
         {
-            baglanti = new SqlConnection(@"Data Source = DESKTOP-VK83I53; Initial Catalog = Aydin; User ID = deneme; Password = 123456");
+            baglanti = new SqlConnection(Anasayfa.sqlAdress);
             baglanti.Open();
             da = new SqlDataAdapter("select TCKN,Isim,Soyisim,Bolum1 OkuduguBolum,OgrNo1 OgrenciNumarasi,Bolum2 OkuduguBolum2,OgrNo2 OgrenciNumarasi2,TelNo,DurumBilgisi,AldigiDers1,AldigiDers2,AldigiDers3,AldigiDers4,AldigiDers5 from Ogrenciler", baglanti);
             DataTable tablo = new DataTable();

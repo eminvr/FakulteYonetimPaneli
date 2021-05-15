@@ -49,7 +49,7 @@ namespace FakulteYonetimPaneli
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.label5.Location = new System.Drawing.Point(85, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 20);
+            this.label5.Size = new System.Drawing.Size(64, 17);
             this.label5.TabIndex = 19;
             this.label5.Text = "Ders Ara";
             // 
@@ -60,7 +60,7 @@ namespace FakulteYonetimPaneli
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 24);
+            this.label4.Size = new System.Drawing.Size(93, 20);
             this.label4.TabIndex = 18;
             this.label4.Text = "Ders Silme";
             // 
@@ -101,6 +101,7 @@ namespace FakulteYonetimPaneli
             this.textBoxAd.Name = "textBoxAd";
             this.textBoxAd.Size = new System.Drawing.Size(137, 20);
             this.textBoxAd.TabIndex = 16;
+            this.textBoxAd.TextChanged += new System.EventHandler(this.textBoxAd_TextChanged);
             // 
             // label3
             // 

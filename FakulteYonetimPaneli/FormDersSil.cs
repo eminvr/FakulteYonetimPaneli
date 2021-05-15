@@ -16,5 +16,10 @@ namespace FakulteYonetimPaneli
         {
             InitializeComponent();
         }
+
+        private void textBoxAd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
