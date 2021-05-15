@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C032ABD5-95F4-40A6-82E3-D1EFE612704D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>FakulteYonetimPaneli</RootNamespace>
+    <AssemblyName>FakulteYonetimPaneli</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDersEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDersEkle.Designer.cs">
+      <DependentUpon>FormDersEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDersGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDersGuncelle.Designer.cs">
+      <DependentUpon>FormDersGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDersSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDersSil.Designer.cs">
+      <DependentUpon>FormDersSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormDersSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDersSorgula.Designer.cs">
+      <DependentUpon>FormDersSorgula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNOT.Designer.cs">
+      <DependentUpon>FormNOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgrenciEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciEkle.Designer.cs">
+      <DependentUpon>FormOgrenciEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgrenciSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciSil.Designer.cs">
+      <DependentUpon>FormOgrenciSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgrenciGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciGuncelle.Designer.cs">
+      <DependentUpon>FormOgrenciGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgrenciSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgrenciSorgula.Designer.cs">
+      <DependentUpon>FormOgrenciSorgula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgretimUyesiEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgretimUyesiEkle.Designer.cs">
+      <DependentUpon>FormOgretimUyesiEkle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgretimUyesiGuncelle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgretimUyesiGuncelle.Designer.cs">
+      <DependentUpon>FormOgretimUyesiGuncelle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOgretimUyesiSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgretimUyesiSorgula.Designer.cs">
+      <DependentUpon>FormOgretimUyesiSorgula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ogrenci.cs" />
+    <Compile Include="OgretimUyesi.cs" />
+    <Compile Include="FormOgretimUyesiSil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOgretimUyesiSil.Designer.cs">
+      <DependentUpon>FormOgretimUyesiSil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDersEkle.resx">
+      <DependentUpon>FormDersEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDersGuncelle.resx">
+      <DependentUpon>FormDersGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDersSil.resx">
+      <DependentUpon>FormDersSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDersSorgula.resx">
+      <DependentUpon>FormDersSorgula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNOT.resx">
+      <DependentUpon>FormNOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciEkle.resx">
+      <DependentUpon>FormOgrenciEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciSil.resx">
+      <DependentUpon>FormOgrenciSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciGuncelle.resx">
+      <DependentUpon>FormOgrenciGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgrenciSorgula.resx">
+      <DependentUpon>FormOgrenciSorgula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgretimUyesiEkle.resx">
+      <DependentUpon>FormOgretimUyesiEkle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgretimUyesiGuncelle.resx">
+      <DependentUpon>FormOgretimUyesiGuncelle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgretimUyesiSorgula.resx">
+      <DependentUpon>FormOgretimUyesiSorgula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOgretimUyesiSil.resx">
+      <DependentUpon>FormOgretimUyesiSil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
