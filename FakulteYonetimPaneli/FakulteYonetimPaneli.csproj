@@ -52,6 +52,25 @@
     <Compile Include="Anasayfa.Designer.cs">
       <DependentUpon>Anasayfa.cs</DependentUpon>
     </Compile>
+    <Compile Include="DersManager.cs" />
+    <Compile Include="FormBolumDersSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBolumDersSorgula.Designer.cs">
+      <DependentUpon>FormBolumDersSorgula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBolumOgrenciSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBolumOgrenciSorgula.Designer.cs">
+      <DependentUpon>FormBolumOgrenciSorgula.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBolumOgretimSorgula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBolumOgretimSorgula.Designer.cs">
+      <DependentUpon>FormBolumOgretimSorgula.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDersEkle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +95,23 @@
     <Compile Include="FormDersSorgula.Designer.cs">
       <DependentUpon>FormDersSorgula.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHakkında.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHakkında.Designer.cs">
+      <DependentUpon>FormHakkında.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNOT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormNOT.Designer.cs">
       <DependentUpon>FormNOT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBolumOgrenciDersEkle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBolumOgrenciDersEkle.Designer.cs">
+      <DependentUpon>FormBolumOgrenciDersEkle.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOgrenciEkle.cs">
       <SubType>Form</SubType>
@@ -124,19 +155,27 @@
     <Compile Include="FormOgretimUyesiSorgula.Designer.cs">
       <DependentUpon>FormOgretimUyesiSorgula.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ogrenci.cs" />
-    <Compile Include="OgretimUyesi.cs" />
     <Compile Include="FormOgretimUyesiSil.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOgretimUyesiSil.Designer.cs">
       <DependentUpon>FormOgretimUyesiSil.cs</DependentUpon>
     </Compile>
-    <Compile Include="Person.cs" />
+    <Compile Include="OgrenciManager.cs" />
+    <Compile Include="OgretimUyesiManager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Anasayfa.resx">
       <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBolumDersSorgula.resx">
+      <DependentUpon>FormBolumDersSorgula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBolumOgrenciSorgula.resx">
+      <DependentUpon>FormBolumOgrenciSorgula.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBolumOgretimSorgula.resx">
+      <DependentUpon>FormBolumOgretimSorgula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDersEkle.resx">
       <DependentUpon>FormDersEkle.cs</DependentUpon>
@@ -150,8 +189,14 @@
     <EmbeddedResource Include="FormDersSorgula.resx">
       <DependentUpon>FormDersSorgula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHakkında.resx">
+      <DependentUpon>FormHakkında.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNOT.resx">
       <DependentUpon>FormNOT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBolumOgrenciDersEkle.resx">
+      <DependentUpon>FormBolumOgrenciDersEkle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOgrenciEkle.resx">
       <DependentUpon>FormOgrenciEkle.cs</DependentUpon>
@@ -185,7 +230,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\.editorconfig">
+      <Link>.editorconfig</Link>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -198,6 +247,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Webp.net-resizeimage.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

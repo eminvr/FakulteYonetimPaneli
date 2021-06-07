@@ -53,7 +53,7 @@ namespace FakulteYonetimPaneli
             this.comboBoxBolum = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxOgrNo = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,6 +87,7 @@ namespace FakulteYonetimPaneli
             // 
             this.textBoxAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxAd.Location = new System.Drawing.Point(91, 56);
+            this.textBoxAd.MaxLength = 50;
             this.textBoxAd.Name = "textBoxAd";
             this.textBoxAd.Size = new System.Drawing.Size(100, 20);
             this.textBoxAd.TabIndex = 3;
@@ -106,6 +107,7 @@ namespace FakulteYonetimPaneli
             // 
             this.textBoxSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxSoyad.Location = new System.Drawing.Point(91, 82);
+            this.textBoxSoyad.MaxLength = 30;
             this.textBoxSoyad.Name = "textBoxSoyad";
             this.textBoxSoyad.Size = new System.Drawing.Size(100, 20);
             this.textBoxSoyad.TabIndex = 3;
@@ -125,6 +127,7 @@ namespace FakulteYonetimPaneli
             // 
             this.textBoxTCKN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxTCKN.Location = new System.Drawing.Point(91, 108);
+            this.textBoxTCKN.MaxLength = 11;
             this.textBoxTCKN.Name = "textBoxTCKN";
             this.textBoxTCKN.Size = new System.Drawing.Size(100, 20);
             this.textBoxTCKN.TabIndex = 3;
@@ -136,7 +139,7 @@ namespace FakulteYonetimPaneli
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.09346F);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.label5.Location = new System.Drawing.Point(394, 12);
+            this.label5.Location = new System.Drawing.Point(341, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(144, 22);
             this.label5.TabIndex = 1;
@@ -145,17 +148,19 @@ namespace FakulteYonetimPaneli
             // textBoxTCKN2
             // 
             this.textBoxTCKN2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxTCKN2.Location = new System.Drawing.Point(520, 111);
+            this.textBoxTCKN2.Location = new System.Drawing.Point(467, 111);
             this.textBoxTCKN2.MaxLength = 11;
             this.textBoxTCKN2.Name = "textBoxTCKN2";
+            this.textBoxTCKN2.ReadOnly = true;
             this.textBoxTCKN2.Size = new System.Drawing.Size(100, 20);
             this.textBoxTCKN2.TabIndex = 8;
+            this.textBoxTCKN2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTCKN2_KeyPress);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label6.Location = new System.Drawing.Point(394, 111);
+            this.label6.Location = new System.Drawing.Point(341, 111);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(101, 13);
             this.label6.TabIndex = 5;
@@ -164,7 +169,8 @@ namespace FakulteYonetimPaneli
             // textBoxSoyadi
             // 
             this.textBoxSoyadi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxSoyadi.Location = new System.Drawing.Point(520, 81);
+            this.textBoxSoyadi.Location = new System.Drawing.Point(467, 81);
+            this.textBoxSoyadi.MaxLength = 30;
             this.textBoxSoyadi.Name = "textBoxSoyadi";
             this.textBoxSoyadi.Size = new System.Drawing.Size(100, 20);
             this.textBoxSoyadi.TabIndex = 9;
@@ -173,7 +179,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label7.Location = new System.Drawing.Point(394, 81);
+            this.label7.Location = new System.Drawing.Point(341, 81);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 13);
             this.label7.TabIndex = 6;
@@ -182,7 +188,8 @@ namespace FakulteYonetimPaneli
             // textBoxAdi
             // 
             this.textBoxAdi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxAdi.Location = new System.Drawing.Point(520, 52);
+            this.textBoxAdi.Location = new System.Drawing.Point(467, 52);
+            this.textBoxAdi.MaxLength = 50;
             this.textBoxAdi.Name = "textBoxAdi";
             this.textBoxAdi.Size = new System.Drawing.Size(100, 20);
             this.textBoxAdi.TabIndex = 10;
@@ -191,7 +198,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label8.Location = new System.Drawing.Point(394, 52);
+            this.label8.Location = new System.Drawing.Point(341, 52);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(25, 13);
             this.label8.TabIndex = 7;
@@ -201,7 +208,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label9.AutoSize = true;
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label9.Location = new System.Drawing.Point(394, 142);
+            this.label9.Location = new System.Drawing.Point(341, 142);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(93, 13);
             this.label9.TabIndex = 7;
@@ -210,11 +217,12 @@ namespace FakulteYonetimPaneli
             // textBoxTelNo
             // 
             this.textBoxTelNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxTelNo.Location = new System.Drawing.Point(520, 142);
+            this.textBoxTelNo.Location = new System.Drawing.Point(467, 142);
             this.textBoxTelNo.MaxLength = 11;
             this.textBoxTelNo.Name = "textBoxTelNo";
             this.textBoxTelNo.Size = new System.Drawing.Size(100, 20);
             this.textBoxTelNo.TabIndex = 10;
+            this.textBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelNo_KeyPress);
             // 
             // label10
             // 
@@ -229,10 +237,10 @@ namespace FakulteYonetimPaneli
             this.comboBoxDurum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.comboBoxDurum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxDurum.FormattingEnabled = true;
-            this.comboBoxDurum.Location = new System.Drawing.Point(763, 49);
+            this.comboBoxDurum.Location = new System.Drawing.Point(710, 49);
             this.comboBoxDurum.MaxDropDownItems = 2;
             this.comboBoxDurum.Name = "comboBoxDurum";
-            this.comboBoxDurum.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxDurum.Size = new System.Drawing.Size(150, 21);
             this.comboBoxDurum.TabIndex = 19;
             this.comboBoxDurum.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -240,7 +248,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label11.Location = new System.Drawing.Point(637, 52);
+            this.label11.Location = new System.Drawing.Point(584, 52);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(77, 13);
             this.label11.TabIndex = 18;
@@ -250,9 +258,10 @@ namespace FakulteYonetimPaneli
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(640, 142);
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.09346F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.button4.Location = new System.Drawing.Point(587, 142);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(223, 48);
+            this.button4.Size = new System.Drawing.Size(276, 48);
             this.button4.TabIndex = 20;
             this.button4.Text = "Güncelle";
             this.button4.UseVisualStyleBackColor = false;
@@ -262,7 +271,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label12.AutoSize = true;
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label12.Location = new System.Drawing.Point(637, 82);
+            this.label12.Location = new System.Drawing.Point(584, 82);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(57, 13);
             this.label12.TabIndex = 18;
@@ -273,10 +282,10 @@ namespace FakulteYonetimPaneli
             this.comboBoxBolum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.comboBoxBolum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxBolum.FormattingEnabled = true;
-            this.comboBoxBolum.Location = new System.Drawing.Point(763, 79);
-            this.comboBoxBolum.MaxDropDownItems = 2;
+            this.comboBoxBolum.Location = new System.Drawing.Point(710, 79);
+            this.comboBoxBolum.MaxDropDownItems = 5;
             this.comboBoxBolum.Name = "comboBoxBolum";
-            this.comboBoxBolum.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxBolum.Size = new System.Drawing.Size(150, 21);
             this.comboBoxBolum.TabIndex = 19;
             this.comboBoxBolum.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
@@ -284,7 +293,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label13.Location = new System.Drawing.Point(637, 112);
+            this.label13.Location = new System.Drawing.Point(584, 112);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(94, 13);
             this.label13.TabIndex = 7;
@@ -293,23 +302,23 @@ namespace FakulteYonetimPaneli
             // textBoxOgrNo
             // 
             this.textBoxOgrNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxOgrNo.Location = new System.Drawing.Point(763, 109);
+            this.textBoxOgrNo.Location = new System.Drawing.Point(710, 109);
             this.textBoxOgrNo.MaxLength = 11;
             this.textBoxOgrNo.Name = "textBoxOgrNo";
             this.textBoxOgrNo.ReadOnly = true;
-            this.textBoxOgrNo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxOgrNo.Size = new System.Drawing.Size(150, 20);
             this.textBoxOgrNo.TabIndex = 10;
             // 
-            // label14
+            // label1
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11215F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label14.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.label14.Location = new System.Drawing.Point(12, 12);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(251, 24);
-            this.label14.TabIndex = 21;
-            this.label14.Text = "Öğrenci Bilgileri Güncelleme";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.09346F);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.label1.Location = new System.Drawing.Point(35, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 22);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Arama Yap";
             // 
             // FormOgrenciGuncelle
             // 
@@ -317,7 +326,7 @@ namespace FakulteYonetimPaneli
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(876, 516);
-            this.Controls.Add(this.label14);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.comboBoxBolum);
             this.Controls.Add(this.comboBoxDurum);
@@ -378,6 +387,6 @@ namespace FakulteYonetimPaneli
         private System.Windows.Forms.ComboBox comboBoxBolum;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBoxOgrNo;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label1;
     }
 }

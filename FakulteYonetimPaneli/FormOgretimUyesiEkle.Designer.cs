@@ -43,12 +43,6 @@ namespace FakulteYonetimPaneli
             this.label2 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -67,9 +61,10 @@ namespace FakulteYonetimPaneli
             // 
             this.btnKaydet.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnKaydet.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnKaydet.Location = new System.Drawing.Point(286, 245);
+            this.btnKaydet.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.09346F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnKaydet.Location = new System.Drawing.Point(343, 155);
             this.btnKaydet.Name = "btnKaydet";
-            this.btnKaydet.Size = new System.Drawing.Size(157, 58);
+            this.btnKaydet.Size = new System.Drawing.Size(207, 56);
             this.btnKaydet.TabIndex = 26;
             this.btnKaydet.Text = "Kaydet";
             this.btnKaydet.UseVisualStyleBackColor = false;
@@ -90,7 +85,7 @@ namespace FakulteYonetimPaneli
             this.textBoxSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxSoyad.Location = new System.Drawing.Point(135, 118);
             this.textBoxSoyad.Name = "textBoxSoyad";
-            this.textBoxSoyad.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSoyad.Size = new System.Drawing.Size(150, 20);
             this.textBoxSoyad.TabIndex = 28;
             // 
             // textBoxAd
@@ -98,7 +93,7 @@ namespace FakulteYonetimPaneli
             this.textBoxAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxAd.Location = new System.Drawing.Point(135, 83);
             this.textBoxAd.Name = "textBoxAd";
-            this.textBoxAd.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAd.Size = new System.Drawing.Size(150, 20);
             this.textBoxAd.TabIndex = 27;
             // 
             // label1
@@ -118,7 +113,7 @@ namespace FakulteYonetimPaneli
             this.textBoxSicilNo.MaxLength = 4;
             this.textBoxSicilNo.Name = "textBoxSicilNo";
             this.textBoxSicilNo.ReadOnly = true;
-            this.textBoxSicilNo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxSicilNo.Size = new System.Drawing.Size(150, 20);
             this.textBoxSicilNo.TabIndex = 32;
             // 
             // label4
@@ -139,7 +134,7 @@ namespace FakulteYonetimPaneli
             this.comboBoxBolum.Location = new System.Drawing.Point(135, 155);
             this.comboBoxBolum.MaxDropDownItems = 5;
             this.comboBoxBolum.Name = "comboBoxBolum";
-            this.comboBoxBolum.Size = new System.Drawing.Size(100, 21);
+            this.comboBoxBolum.Size = new System.Drawing.Size(150, 21);
             this.comboBoxBolum.TabIndex = 33;
             this.comboBoxBolum.SelectedIndexChanged += new System.EventHandler(this.comboBoxBolum_SelectedIndexChanged);
             // 
@@ -158,17 +153,17 @@ namespace FakulteYonetimPaneli
             this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(343, 82);
+            this.comboBox1.Location = new System.Drawing.Point(400, 82);
             this.comboBox1.MaxDropDownItems = 99;
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.Size = new System.Drawing.Size(150, 21);
             this.comboBox1.TabIndex = 35;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label2.Location = new System.Drawing.Point(283, 85);
+            this.label2.Location = new System.Drawing.Point(340, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 36;
@@ -179,91 +174,28 @@ namespace FakulteYonetimPaneli
             this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(343, 109);
+            this.comboBox2.Location = new System.Drawing.Point(400, 115);
             this.comboBox2.MaxDropDownItems = 99;
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
+            this.comboBox2.Size = new System.Drawing.Size(150, 21);
             this.comboBox2.TabIndex = 37;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label3.Location = new System.Drawing.Point(283, 112);
+            this.label3.Location = new System.Drawing.Point(340, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 13);
             this.label3.TabIndex = 38;
             this.label3.Text = "2. Ders:";
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(343, 164);
-            this.comboBox4.MaxDropDownItems = 99;
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(100, 21);
-            this.comboBox4.TabIndex = 41;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label7.Location = new System.Drawing.Point(283, 166);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(44, 13);
-            this.label7.TabIndex = 42;
-            this.label7.Text = "4. Ders:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(343, 137);
-            this.comboBox3.MaxDropDownItems = 99;
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 21);
-            this.comboBox3.TabIndex = 39;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label8.Location = new System.Drawing.Point(283, 140);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "3. Ders:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label9.Location = new System.Drawing.Point(283, 193);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 42;
-            this.label9.Text = "5. Ders:";
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(343, 191);
-            this.comboBox5.MaxDropDownItems = 99;
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(100, 21);
-            this.comboBox5.TabIndex = 41;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.09346F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.label11.Location = new System.Drawing.Point(306, 48);
+            this.label11.Location = new System.Drawing.Point(363, 48);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(127, 20);
             this.label11.TabIndex = 43;
@@ -276,12 +208,6 @@ namespace FakulteYonetimPaneli
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(876, 516);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.comboBox5);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox4);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBox1);
@@ -320,12 +246,6 @@ namespace FakulteYonetimPaneli
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label11;
     }
 }

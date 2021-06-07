@@ -49,7 +49,7 @@ namespace FakulteYonetimPaneli
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.label10.Location = new System.Drawing.Point(12, 9);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(153, 24);
+            this.label10.Size = new System.Drawing.Size(140, 20);
             this.label10.TabIndex = 25;
             this.label10.Text = "Öğretim Üyesi Sil";
             // 
@@ -60,7 +60,7 @@ namespace FakulteYonetimPaneli
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.label5.Location = new System.Drawing.Point(39, 168);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(137, 20);
+            this.label5.Size = new System.Drawing.Size(123, 17);
             this.label5.TabIndex = 32;
             this.label5.Text = "Öğretim Üyesi Ara";
             // 
@@ -72,6 +72,7 @@ namespace FakulteYonetimPaneli
             this.textBoxSicil.Name = "textBoxSicil";
             this.textBoxSicil.Size = new System.Drawing.Size(137, 20);
             this.textBoxSicil.TabIndex = 29;
+            this.textBoxSicil.TextChanged += new System.EventHandler(this.textBoxSicil_TextChanged);
             this.textBoxSicil.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTCKN_KeyPress);
             // 
             // textBoxSoyad
@@ -81,6 +82,7 @@ namespace FakulteYonetimPaneli
             this.textBoxSoyad.Name = "textBoxSoyad";
             this.textBoxSoyad.Size = new System.Drawing.Size(137, 20);
             this.textBoxSoyad.TabIndex = 30;
+            this.textBoxSoyad.TextChanged += new System.EventHandler(this.textBoxSoyad_TextChanged);
             // 
             // textBoxAd
             // 
@@ -89,6 +91,7 @@ namespace FakulteYonetimPaneli
             this.textBoxAd.Name = "textBoxAd";
             this.textBoxAd.Size = new System.Drawing.Size(137, 20);
             this.textBoxAd.TabIndex = 31;
+            this.textBoxAd.TextChanged += new System.EventHandler(this.textBoxAd_TextChanged);
             // 
             // label3
             // 
@@ -134,6 +137,7 @@ namespace FakulteYonetimPaneli
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(610, 438);
             this.dataGridView1.TabIndex = 33;
+           
             // 
             // button2
             // 
@@ -168,6 +172,7 @@ namespace FakulteYonetimPaneli
             this.Controls.Add(this.label10);
             this.Name = "FormOgretimUyesiSil";
             this.Text = "OgretimUyesiSil";
+            this.Load += new System.EventHandler(this.FormOgretimUyesiSil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,1 +1,0 @@
-Data Source = DESKTOP-VK83I53; Initial Catalog = Aydin;Integrated Security=True

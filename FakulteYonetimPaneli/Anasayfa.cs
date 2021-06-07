@@ -13,13 +13,23 @@ namespace FakulteYonetimPaneli
 {
     public partial class Anasayfa : Form
     {
-        public static string sqlAdress = File.ReadAllText(Path.Combine(Application.StartupPath,"text.txt"));
+        public static string bolum1 = "B1 - Bilgisayar Mühendisliği";
+        public static string bolum2 = "B2 - Yazılım Mühendisliği";
+        public static string bolum3 = "B3 - Makine Mühendisliği";
+        public static string bolum4 = "B4 - Mekatronik Mühendisliği";
+        public static string bolum5 = "B5 - Elektronik Mühendisliği";
+
+        public static string sqlAdress = File.ReadAllText(Path.Combine(Application.StartupPath, "text.txt"));
         public static Button[] butonlar = new Button[16];
+
+
         public Anasayfa()
         {
             InitializeComponent();
             customizeDesign();
         }
+
+
         private void customizeDesign()
         {
             panelOgrenciSubMenu.Visible = false;
@@ -28,25 +38,31 @@ namespace FakulteYonetimPaneli
             panelDersSubMenu.Visible = false;
         }
 
+
         private void hideSubMenu()
         {
             if (panelOgrenciSubMenu.Visible == true)
             {
                 panelOgrenciSubMenu.Visible = false;
             }
+
             if (panelOgretimSubMenu.Visible == true)
             {
                 panelOgretimSubMenu.Visible = false;
             }
+
             if (panelBolumSubMenu.Visible == true)
             {
                 panelBolumSubMenu.Visible = false;
             }
+
             if (panelDersSubMenu.Visible == true)
             {
                 panelDersSubMenu.Visible = false;
-            }              
+            }
         }
+
+
         private void showSubMenu(Panel subMenu)
         {
             if (subMenu.Visible == false)
@@ -54,162 +70,163 @@ namespace FakulteYonetimPaneli
                 hideSubMenu();
                 subMenu.Visible = true;
             }
+
             else
             {
                 subMenu.Visible = false;
             }
         }
-       
+
+
         private void btnOgrenciIslemleri_Click(object sender, EventArgs e)
         {
-            
             showSubMenu(panelOgrenciSubMenu);
         }
 
+
         private void button2_Click(object sender, EventArgs e)
         {
-
             butonSıfırla();
             butonRenklendir(button2);
             openChildForm(new FormOgrenciEkle());
-            //kodlar..
-
             //hideSubMenu();
         }
+
 
         private void button3_Click(object sender, EventArgs e)
         {
-
             butonSıfırla();
             butonRenklendir(button3);
             openChildForm(new FormOgrenciSil());
-            //kodlar..
             //hideSubMenu();
         }
 
+
         private void button4_Click(object sender, EventArgs e)
         {
-            //kodlar..
-
             butonSıfırla();
             butonRenklendir(button4);
             openChildForm(new FormOgrenciGuncelle());
             //hideSubMenu();
         }
 
+
         private void button5_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button5);
             openChildForm(new FormOgrenciSorgula());
             //hideSubMenu();
         }
 
+
         private void btnOgretimUyesiIslemleri_Click(object sender, EventArgs e)
         {
-            
             showSubMenu(panelOgretimSubMenu);
         }
 
+
         private void button9_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button9);
             openChildForm(new FormOgretimUyesiEkle());
             //hideSubMenu();
         }
 
+
         private void button8_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button8);
             openChildForm(new FormOgretimUyesiSil());
             //hideSubMenu();
         }
 
+
         private void button7_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button7);
             openChildForm(new FormOgretimUyesiGuncelle());
             //hideSubMenu();
         }
 
+
         private void button6_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button6);
             openChildForm(new FormOgretimUyesiSorgula());
             //hideSubMenu();
         }
 
+
         private void btnBolumIslemleri_Click(object sender, EventArgs e)
         {
-            
             showSubMenu(panelBolumSubMenu);
         }
 
+
         private void button14_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button13);
+            openChildForm(new FormBolumOgrenciSorgula());
             //hideSubMenu();
         }
+
 
         private void button13_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button12);
+            openChildForm(new FormBolumOgretimSorgula());
             //hideSubMenu();
         }
+
 
         private void button12_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button11);
- 
+            openChildForm(new FormBolumDersSorgula());
             //hideSubMenu();
         }
+
 
         private void button11_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button10);
+            openChildForm(new FormBolumOgrenciDersEkle());
             //hideSubMenu();
         }
 
+
         private void btnDersIslemleri_Click(object sender, EventArgs e)
         {
-            
             showSubMenu(panelDersSubMenu);
         }
 
+
         private void button19_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button17);
             openChildForm(new FormDersEkle());
             //hideSubMenu();
         }
 
+
         private void button18_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button16);
             openChildForm(new FormDersSil());
             //hideSubMenu();
         }
+
 
         private void button17_Click(object sender, EventArgs e)
         {
@@ -219,37 +236,41 @@ namespace FakulteYonetimPaneli
             //hideSubMenu();
         }
 
+
         private void button16_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             butonRenklendir(button14);
             openChildForm(new FormDersSorgula());
             //hideSubMenu();
         }
 
+
         private void btnNotIslemleri_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             openChildForm(new FormNOT());
             hideSubMenu();
         }
 
+
         private void btnHakkinda_Click(object sender, EventArgs e)
         {
-            //kodlar..
             butonSıfırla();
             hideSubMenu();
+            openChildForm(new FormHakkında());
         }
 
         private Form activeForm = null;
+
+
         private void openChildForm(Form childFrom)
         {
             if (activeForm != null)
             {
                 activeForm.Close();
             }
+
             activeForm = childFrom;
             childFrom.TopLevel = false;
             childFrom.FormBorderStyle = FormBorderStyle.None;
@@ -260,11 +281,8 @@ namespace FakulteYonetimPaneli
             childFrom.Show();
         }
 
-        
-
         private void Anasayfa_Load(object sender, EventArgs e)
         {
-            
             butonlar[0] = button2;
             butonlar[1] = button3;
             butonlar[2] = button4;
@@ -281,21 +299,18 @@ namespace FakulteYonetimPaneli
             butonlar[13] = button15;
             butonlar[14] = button16;
             butonlar[15] = button17;
-            
-            
-
         }
+
 
         public void butonSıfırla()
         {
-
-
             for (int i = 0; i < 16; i++)
             {
                 butonlar[i].BackColor = Color.FromArgb(57, 62, 70);
                 butonlar[i].ForeColor = Color.FromArgb(238, 238, 238);
             }
         }
+
 
         public void butonRenklendir(Button button)
         {

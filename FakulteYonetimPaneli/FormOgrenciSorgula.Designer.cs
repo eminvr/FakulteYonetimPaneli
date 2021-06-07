@@ -29,7 +29,6 @@ namespace FakulteYonetimPaneli
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxAd = new System.Windows.Forms.TextBox();
@@ -39,19 +38,9 @@ namespace FakulteYonetimPaneli
             this.textBoxTCKN = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxTelNo = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11215F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Öğrenci Sorgulama";
             // 
             // dataGridView1
             // 
@@ -60,6 +49,7 @@ namespace FakulteYonetimPaneli
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 107);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 46;
@@ -149,12 +139,24 @@ namespace FakulteYonetimPaneli
             this.textBoxTelNo.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             this.textBoxTelNo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox4_KeyPress);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.09346F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.label10.Location = new System.Drawing.Point(12, 9);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(140, 22);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Öğrenci Sorgula";
+            // 
             // FormOgrenciSorgula
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(876, 516);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.textBoxTelNo);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.textBoxTCKN);
@@ -164,7 +166,6 @@ namespace FakulteYonetimPaneli
             this.Controls.Add(this.textBoxAd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label1);
             this.ForeColor = System.Drawing.Color.Black;
             this.Name = "FormOgrenciSorgula";
             this.Text = "Form5";
@@ -176,8 +177,6 @@ namespace FakulteYonetimPaneli
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxAd;
@@ -187,5 +186,6 @@ namespace FakulteYonetimPaneli
         private System.Windows.Forms.TextBox textBoxTCKN;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxTelNo;
+        private System.Windows.Forms.Label label10;
     }
 }

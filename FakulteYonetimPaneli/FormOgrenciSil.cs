@@ -10,43 +10,31 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 
 
-
 namespace FakulteYonetimPaneli
 {
 
     public partial class FormOgrenciSil : Form
     {
+
+        OgrenciManager ogrenciManager = new OgrenciManager();
+
         SqlConnection baglanti;
-        SqlCommand komut;
-        SqlDataAdapter da;
+        SqlCommand komut;      
+
+
         public FormOgrenciSil()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
-
-        void OgrenciGetir()
-        {
-            baglanti = new SqlConnection(Anasayfa.sqlAdress);
-            baglanti.Open();
-            da = new SqlDataAdapter("select TCKN,Isim,Soyisim from Ogrenciler", baglanti);
-            DataTable tablo = new DataTable();
-            da.Fill(tablo);
-            dataGridView1.DataSource = tablo;
-            baglanti.Close();
-
-        }
         private void button2_Click(object sender, EventArgs e)
         {
             string mesaj = "Bu öğrenciyi silmek istediğinize emin misiniz?";
-            string title = "";
+            string title = "Uyarı";
             MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-            DialogResult result = MessageBox.Show(mesaj, title, buttons);
+            DialogResult result = MessageBox.Show(mesaj, title, buttons, MessageBoxIcon.Warning);
+
             if (result == DialogResult.Yes)
             {
                 string sorgu = "Delete from Ogrenciler where TCKN=@TCKN";
@@ -55,105 +43,54 @@ namespace FakulteYonetimPaneli
                 baglanti.Open();
                 komut.ExecuteNonQuery();
                 baglanti.Close();
-                OgrenciGetir();
+                dataGridView1.DataSource = ogrenciManager.OgrenciGetir("TCKN,Isim,Soyisim");
                 textBoxAd.Clear();
                 textBoxSoyad.Clear();
                 textBoxTCKN.Clear();
+                MessageBox.Show("Öğrenci silindi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+
             else
             {
                 //Hayıra basılırsa yapılacak işlemler
             }
         }
 
+
         private void Form3_Load(object sender, EventArgs e)
         {
-            OgrenciGetir();
+            baglanti = new SqlConnection(Anasayfa.sqlAdress);
+            dataGridView1.DataSource = ogrenciManager.OgrenciGetir("TCKN, Isim, Soyisim");         
         }
 
-
-
-        private void buttonAdAra_Click(object sender, EventArgs e)
-        {
-            //baglanti.Open();
-            //komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where Isim like '%" + textBoxAd.Text + "%'", baglanti);
-            //SqlDataAdapter da = new SqlDataAdapter(komut);
-            //DataTable tablo = new DataTable();
-            //da.Fill(tablo);
-            //dataGridView1.DataSource = tablo;
-            //baglanti.Close();
-        }
-
-        private void textBoxAd_TextChanged(object sender, EventArgs e)
-        {
-            //baglanti.Open();
-            //komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where Isim like '%" + textBoxAd.Text + "%'", baglanti);
-            //SqlDataAdapter da = new SqlDataAdapter(komut);
-            //DataTable tablo = new DataTable();
-            //da.Fill(tablo);
-            //dataGridView1.DataSource = tablo;
-            //baglanti.Close();
-        }
-
-        private void textBoxSoyad_TextChanged(object sender, EventArgs e)
-        {
-            //baglanti.Open();
-            //komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where Soyisim like '%" + textBoxSoyad.Text + "%'", baglanti);
-            //SqlDataAdapter da = new SqlDataAdapter(komut);
-            //DataTable tablo = new DataTable();
-            //da.Fill(tablo);
-            //dataGridView1.DataSource = tablo;
-            //baglanti.Close();
-        }
-
-        private void textBoxTCKN_TextChanged(object sender, EventArgs e)
-        {
-            //baglanti.Open();
-            //komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where TCKN like '%" + textBoxTCKN.Text + "%'", baglanti);
-            //SqlDataAdapter da = new SqlDataAdapter(komut);
-            //DataTable tablo = new DataTable();
-            //da.Fill(tablo);
-            //dataGridView1.DataSource = tablo;
-            //baglanti.Close();
-        }
 
         private void textBoxTCKN_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
 
+
         private void textBoxAd_TextChanged_1(object sender, EventArgs e)
         {
-            baglanti.Open();
-            komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where Isim like '%" + textBoxAd.Text + "%'", baglanti);
-            SqlDataAdapter da = new SqlDataAdapter(komut);
-            DataTable tablo = new DataTable();
-            da.Fill(tablo);
-            dataGridView1.DataSource = tablo;
-            baglanti.Close();
+            //Isim
+            dataGridView1.DataSource = ogrenciManager.ogrenciSorgula(textBoxAd, "Isim", "TCKN,Isim,Soyisim");
         }
+
 
         private void textBoxSoyad_TextChanged_1(object sender, EventArgs e)
         {
-            baglanti.Open();
-            komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where Soyisim like '%" + textBoxSoyad.Text + "%'", baglanti);
-            SqlDataAdapter da = new SqlDataAdapter(komut);
-            DataTable tablo = new DataTable();
-            da.Fill(tablo);
-            dataGridView1.DataSource = tablo;
-            baglanti.Close();
+            dataGridView1.DataSource = ogrenciManager.ogrenciSorgula(textBoxSoyad, "Soyisim", "TCKN,Isim,Soyisim");
         }
+
 
         private void textBoxTCKN_TextChanged_1(object sender, EventArgs e)
         {
-            baglanti.Open();
-            komut = new SqlCommand("select TCKN,Isim,Soyisim from Ogrenciler where TCKN like '%" + textBoxTCKN.Text + "%'", baglanti);
-            SqlDataAdapter da = new SqlDataAdapter(komut);
-            DataTable tablo = new DataTable();
-            da.Fill(tablo);
-            dataGridView1.DataSource = tablo;
-            baglanti.Close();
+            dataGridView1.DataSource = ogrenciManager.ogrenciSorgula(textBoxTCKN, "TCKN", "TCKN,Isim,Soyisim");
+        }
+
+        private void dataGridView1_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
-

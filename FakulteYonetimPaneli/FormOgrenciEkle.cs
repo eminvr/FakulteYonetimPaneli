@@ -15,46 +15,42 @@ namespace FakulteYonetimPaneli
     public partial class FormOgrenciEkle : Form
     {
         public static bool durum;
-        
+        OgrenciManager ogrenciManager = new OgrenciManager();
 
 
         public FormOgrenciEkle()
         {
             InitializeComponent();
-            
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        
         SqlConnection baglanti = new SqlConnection(Anasayfa.sqlAdress);
         SqlConnection baglanti2 = new SqlConnection(Anasayfa.sqlAdress);
 
+
         void mukerrer()
         {
-
             baglanti.Open();
             SqlCommand komut = new SqlCommand("select * from Ogrenciler where TCKN=@p4", baglanti);
             komut.Parameters.AddWithValue("@p4", textBoxTCKN.Text);
             SqlDataReader dr = komut.ExecuteReader();
+
             if (dr.Read())
             {
                 durum = false;
             }
+
             else
             {
                 durum = true;
             }
+
             baglanti.Close();
         }
-        
+
+
         private void btnOgrenciyiEkle_Click(object sender, EventArgs e)
         {
-            if (textBoxSoyadi.TextLength < 1 || textBoxAdi.TextLength < 1) 
+            if (textBoxSoyadi.TextLength < 1 || textBoxAdi.TextLength < 1)
             {
                 MessageBox.Show("Ad veya soyad kısmı boş bırakılamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
@@ -84,14 +80,16 @@ namespace FakulteYonetimPaneli
                 MessageBox.Show("Bölüm2 kısmı boş bırakılamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
+            else if (comboBox2.SelectedItem == comboBox3.SelectedItem)
+            {
+                MessageBox.Show("Bölüm1 ile Bölüm2 kısmı aynı olamaz!", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             else
             {
                 mukerrer();
                 if (durum)
                 {
-                   
-                    
-
                     //ÇAP SEÇİLDİYSE VERİ TABANINA EKLENECEK KODLAR
                     if (comboBox1.SelectedItem.ToString() == "Çap")
                     {
@@ -111,6 +109,7 @@ namespace FakulteYonetimPaneli
                         komut2.ExecuteNonQuery();
                         baglanti2.Close();
                     }
+
                     else
                     {
                         baglanti.Open();
@@ -125,62 +124,63 @@ namespace FakulteYonetimPaneli
                         komut.ExecuteNonQuery();
                         baglanti.Close();
                     }
-                    
-                    MessageBox.Show("Kayit Eklendi");
-                    textBoxAdi.Text = "";
-                    textBoxSoyadi.Text = "";
-                    textBoxBolum1OgrNo.Text = "";
-                    textBoxTCKN.Text = "";
-                    textBoxTelNo.Text = "";
-                    comboBox1.Text = "Seçiniz";
+
+                    MessageBox.Show($"{textBoxAdi.Text} {textBoxSoyadi.Text} adlı öğrenci eklendi.", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    textBoxAdi.Clear();
+                    textBoxSoyadi.Clear();
+                    textBoxBolum1OgrNo.Clear();
+                    textBoxBolum2OgrNo.Clear();
+                    textBoxTCKN.Clear();
+                    textBoxTelNo.Clear();
+                    comboBox1.SelectedIndex = -1;
+                    comboBox2.SelectedIndex = -1;
+                    comboBox3.SelectedIndex = -1;
+
                 }
+
                 else
                 {
-                    MessageBox.Show("Bu kayit zaten var", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Bu öğrenci zaten var!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
 
-        private void textBoxAdiSoyadi_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form2_Load(object sender, EventArgs e)
         {
             comboBox1.Items.Add("Anadal");
             comboBox1.Items.Add("Çap");
 
-            comboBox2.Items.Add("B1");
-            comboBox2.Items.Add("B2");
-            comboBox2.Items.Add("B3");
-            comboBox2.Items.Add("B4");
-            comboBox2.Items.Add("B5");
+            comboBox2.Items.Add(Anasayfa.bolum1);
+            comboBox2.Items.Add(Anasayfa.bolum2);
+            comboBox2.Items.Add(Anasayfa.bolum3);
+            comboBox2.Items.Add(Anasayfa.bolum4);
+            comboBox2.Items.Add(Anasayfa.bolum5);
 
-            comboBox3.Items.Add("B1");
-            comboBox3.Items.Add("B2");
-            comboBox3.Items.Add("B3");
-            comboBox3.Items.Add("B4");
-            comboBox3.Items.Add("B5");
+
+            comboBox3.Items.Add(Anasayfa.bolum1);
+            comboBox3.Items.Add(Anasayfa.bolum2);
+            comboBox3.Items.Add(Anasayfa.bolum3);
+            comboBox3.Items.Add(Anasayfa.bolum4);
+            comboBox3.Items.Add(Anasayfa.bolum5);
 
             label8.Visible = false;
             label9.Visible = false;
             comboBox3.Visible = false;
             textBoxBolum2OgrNo.Visible = false;
-
-
-
         }
+
 
         private void comboBox1_DropDownClosed(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "Çap")
+            if (comboBox1.SelectedIndex == 1)
             {
                 label8.Visible = true;
                 label9.Visible = true;
                 comboBox3.Visible = true;
                 textBoxBolum2OgrNo.Visible = true;
             }
+
             else
             {
                 label8.Visible = false;
@@ -190,63 +190,24 @@ namespace FakulteYonetimPaneli
             }
         }
 
-        public void OgrenciNumarasıAta(TextBox textBox, ComboBox comboBox)
-        {
-            textBox.Clear();
-            Random random = new Random();
-            int sayi;
-            if (comboBox.SelectedItem.ToString() == "B1")
-            {
-                sayi = random.Next(10000000, 99999999);
-                textBox.Text = "1" + sayi;
-
-            }
-
-            else if (comboBox.SelectedItem.ToString() == "B2")
-            {
-                sayi = random.Next(10000000, 99999999);
-                textBox.Text = "2" + sayi;
-            }
-
-            else if (comboBox.SelectedItem.ToString() == "B3")
-            {
-                sayi = random.Next(10000000, 99999999);
-                textBox.Text = "3" + sayi;
-            }
-
-            else if (comboBox.SelectedItem.ToString() == "B4")
-            {
-                sayi = random.Next(10000000, 99999999);
-                textBox.Text = "4" + sayi;
-            }
-
-            else if (comboBox.SelectedItem.ToString() == "B5")
-            {
-                sayi = random.Next(10000000, 99999999);
-                textBox.Text = "5" + sayi;
-            }
-
-            else
-            {
-
-                textBox.Clear();
-            }
-        }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OgrenciNumarasıAta(textBoxBolum1OgrNo, comboBox2);
+            ogrenciManager.OgrenciNumarasıAta(textBoxBolum1OgrNo, comboBox2);
         }
+
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            OgrenciNumarasıAta(textBoxBolum2OgrNo, comboBox3);
+            ogrenciManager.OgrenciNumarasıAta(textBoxBolum2OgrNo, comboBox3);
         }
+
 
         private void textBoxTCKN_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = !char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar);
         }
+
 
         private void textBoxTelNo_KeyPress(object sender, KeyPressEventArgs e)
         {

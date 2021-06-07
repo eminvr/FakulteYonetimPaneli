@@ -32,9 +32,9 @@ namespace FakulteYonetimPaneli
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBoxTCKN = new System.Windows.Forms.TextBox();
-            this.textBoxSoyad = new System.Windows.Forms.TextBox();
-            this.textBoxAd = new System.Windows.Forms.TextBox();
+            this.textBoxDersKodu = new System.Windows.Forms.TextBox();
+            this.textBoxDersiVeren = new System.Windows.Forms.TextBox();
+            this.textBoxDers = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,7 +49,7 @@ namespace FakulteYonetimPaneli
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.label5.Location = new System.Drawing.Point(85, 113);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 17);
+            this.label5.Size = new System.Drawing.Size(72, 20);
             this.label5.TabIndex = 19;
             this.label5.Text = "Ders Ara";
             // 
@@ -60,7 +60,7 @@ namespace FakulteYonetimPaneli
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
             this.label4.Location = new System.Drawing.Point(12, 11);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 20);
+            this.label4.Size = new System.Drawing.Size(101, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "Ders Silme";
             // 
@@ -77,31 +77,34 @@ namespace FakulteYonetimPaneli
             this.button2.TabIndex = 17;
             this.button2.Text = "Seçilen Dersi Sil";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // textBoxTCKN
+            // textBoxDersKodu
             // 
-            this.textBoxTCKN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxTCKN.Location = new System.Drawing.Point(86, 219);
-            this.textBoxTCKN.Name = "textBoxTCKN";
-            this.textBoxTCKN.Size = new System.Drawing.Size(137, 20);
-            this.textBoxTCKN.TabIndex = 14;
+            this.textBoxDersKodu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.textBoxDersKodu.Location = new System.Drawing.Point(86, 219);
+            this.textBoxDersKodu.Name = "textBoxDersKodu";
+            this.textBoxDersKodu.Size = new System.Drawing.Size(137, 20);
+            this.textBoxDersKodu.TabIndex = 14;
+            this.textBoxDersKodu.TextChanged += new System.EventHandler(this.textBoxDersKodu_TextChanged);
             // 
-            // textBoxSoyad
+            // textBoxDersiVeren
             // 
-            this.textBoxSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxSoyad.Location = new System.Drawing.Point(86, 182);
-            this.textBoxSoyad.Name = "textBoxSoyad";
-            this.textBoxSoyad.Size = new System.Drawing.Size(137, 20);
-            this.textBoxSoyad.TabIndex = 15;
+            this.textBoxDersiVeren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.textBoxDersiVeren.Location = new System.Drawing.Point(86, 182);
+            this.textBoxDersiVeren.Name = "textBoxDersiVeren";
+            this.textBoxDersiVeren.Size = new System.Drawing.Size(137, 20);
+            this.textBoxDersiVeren.TabIndex = 15;
+            this.textBoxDersiVeren.TextChanged += new System.EventHandler(this.textBoxDersiVeren_TextChanged);
             // 
-            // textBoxAd
+            // textBoxDers
             // 
-            this.textBoxAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxAd.Location = new System.Drawing.Point(86, 148);
-            this.textBoxAd.Name = "textBoxAd";
-            this.textBoxAd.Size = new System.Drawing.Size(137, 20);
-            this.textBoxAd.TabIndex = 16;
-            this.textBoxAd.TextChanged += new System.EventHandler(this.textBoxAd_TextChanged);
+            this.textBoxDers.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.textBoxDers.Location = new System.Drawing.Point(86, 148);
+            this.textBoxDers.Name = "textBoxDers";
+            this.textBoxDers.Size = new System.Drawing.Size(137, 20);
+            this.textBoxDers.TabIndex = 16;
+            this.textBoxDers.TextChanged += new System.EventHandler(this.textBoxDers_TextChanged);
             // 
             // label3
             // 
@@ -119,9 +122,9 @@ namespace FakulteYonetimPaneli
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.label2.Location = new System.Drawing.Point(13, 185);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 13;
-            this.label2.Text = "Verildiği Sınıf:";
+            this.label2.Text = "Dersi Veren:";
             // 
             // label1
             // 
@@ -157,15 +160,16 @@ namespace FakulteYonetimPaneli
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBoxTCKN);
-            this.Controls.Add(this.textBoxSoyad);
-            this.Controls.Add(this.textBoxAd);
+            this.Controls.Add(this.textBoxDersKodu);
+            this.Controls.Add(this.textBoxDersiVeren);
+            this.Controls.Add(this.textBoxDers);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormDersSil";
             this.Text = "FormDersSil";
+            this.Load += new System.EventHandler(this.FormDersSil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -177,9 +181,9 @@ namespace FakulteYonetimPaneli
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBoxTCKN;
-        private System.Windows.Forms.TextBox textBoxSoyad;
-        private System.Windows.Forms.TextBox textBoxAd;
+        private System.Windows.Forms.TextBox textBoxDersKodu;
+        private System.Windows.Forms.TextBox textBoxDersiVeren;
+        private System.Windows.Forms.TextBox textBoxDers;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;

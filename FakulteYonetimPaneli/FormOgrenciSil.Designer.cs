@@ -37,8 +37,7 @@ namespace FakulteYonetimPaneli
             this.textBoxSoyad = new System.Windows.Forms.TextBox();
             this.textBoxTCKN = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,12 +49,14 @@ namespace FakulteYonetimPaneli
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(254, 13);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 46;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(610, 438);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEnter);
             // 
             // label1
             // 
@@ -91,6 +92,7 @@ namespace FakulteYonetimPaneli
             // 
             this.textBoxAd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxAd.Location = new System.Drawing.Point(78, 146);
+            this.textBoxAd.MaxLength = 50;
             this.textBoxAd.Name = "textBoxAd";
             this.textBoxAd.Size = new System.Drawing.Size(137, 20);
             this.textBoxAd.TabIndex = 5;
@@ -100,6 +102,7 @@ namespace FakulteYonetimPaneli
             // 
             this.textBoxSoyad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxSoyad.Location = new System.Drawing.Point(78, 180);
+            this.textBoxSoyad.MaxLength = 30;
             this.textBoxSoyad.Name = "textBoxSoyad";
             this.textBoxSoyad.Size = new System.Drawing.Size(137, 20);
             this.textBoxSoyad.TabIndex = 5;
@@ -109,6 +112,7 @@ namespace FakulteYonetimPaneli
             // 
             this.textBoxTCKN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.textBoxTCKN.Location = new System.Drawing.Point(78, 217);
+            this.textBoxTCKN.MaxLength = 11;
             this.textBoxTCKN.Name = "textBoxTCKN";
             this.textBoxTCKN.Size = new System.Drawing.Size(137, 20);
             this.textBoxTCKN.TabIndex = 5;
@@ -130,27 +134,16 @@ namespace FakulteYonetimPaneli
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label4
+            // label10
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.11215F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.label4.Location = new System.Drawing.Point(12, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(130, 24);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Öğrenci Silme";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.09346F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
-            this.label5.Location = new System.Drawing.Point(79, 111);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 20);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Öğrenci Ara";
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.09346F);
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(173)))), ((int)(((byte)(181)))));
+            this.label10.Location = new System.Drawing.Point(12, 111);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(183, 20);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Silinecek Öğrenciyi Ara";
             // 
             // FormOgrenciSil
             // 
@@ -158,8 +151,7 @@ namespace FakulteYonetimPaneli
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(876, 516);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.textBoxTCKN);
             this.Controls.Add(this.textBoxSoyad);
@@ -186,7 +178,6 @@ namespace FakulteYonetimPaneli
         private System.Windows.Forms.TextBox textBoxSoyad;
         private System.Windows.Forms.TextBox textBoxTCKN;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label10;
     }
 }

@@ -1,0 +1,4 @@
+﻿[*.cs]
+
+# CS0169: 'FormOgrenciSil.da' alanı hiçbir zaman kullanılmaz
+dotnet_diagnostic.CS0169.severity = warning

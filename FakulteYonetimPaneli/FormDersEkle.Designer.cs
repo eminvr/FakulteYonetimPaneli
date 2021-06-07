@@ -30,19 +30,19 @@ namespace FakulteYonetimPaneli
         private void InitializeComponent()
         {
             this.label10 = new System.Windows.Forms.Label();
-            this.textBoxBolum2OgrNo = new System.Windows.Forms.TextBox();
+            this.textBoxKredi = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBoxOgretimUyeleri = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBoxSoyadi = new System.Windows.Forms.TextBox();
+            this.textBoxKodu = new System.Windows.Forms.TextBox();
             this.btnOgrenciyiEkle = new System.Windows.Forms.Button();
             this.textBoxAdi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBoxVerildigiBolum = new System.Windows.Forms.ComboBox();
+            this.textBoxVerildigiSinif = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label10
@@ -56,15 +56,14 @@ namespace FakulteYonetimPaneli
             this.label10.TabIndex = 44;
             this.label10.Text = "Ders Ekle";
             // 
-            // textBoxBolum2OgrNo
+            // textBoxKredi
             // 
-            this.textBoxBolum2OgrNo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxBolum2OgrNo.Location = new System.Drawing.Point(149, 318);
-            this.textBoxBolum2OgrNo.MaxLength = 9;
-            this.textBoxBolum2OgrNo.Name = "textBoxBolum2OgrNo";
-            this.textBoxBolum2OgrNo.ReadOnly = true;
-            this.textBoxBolum2OgrNo.Size = new System.Drawing.Size(100, 20);
-            this.textBoxBolum2OgrNo.TabIndex = 42;
+            this.textBoxKredi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.textBoxKredi.Location = new System.Drawing.Point(149, 318);
+            this.textBoxKredi.MaxLength = 9;
+            this.textBoxKredi.Name = "textBoxKredi";
+            this.textBoxKredi.Size = new System.Drawing.Size(150, 20);
+            this.textBoxKredi.TabIndex = 42;
             // 
             // label9
             // 
@@ -76,47 +75,50 @@ namespace FakulteYonetimPaneli
             this.label9.TabIndex = 41;
             this.label9.Text = "Dersin Kredisi*:";
             // 
-            // comboBox1
+            // comboBoxOgretimUyeleri
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 221);
-            this.comboBox1.MaxDropDownItems = 2;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 30;
+            this.comboBoxOgretimUyeleri.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.comboBoxOgretimUyeleri.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxOgretimUyeleri.FormattingEnabled = true;
+            this.comboBoxOgretimUyeleri.Location = new System.Drawing.Point(150, 269);
+            this.comboBoxOgretimUyeleri.MaxDropDownItems = 2;
+            this.comboBoxOgretimUyeleri.Name = "comboBoxOgretimUyeleri";
+            this.comboBoxOgretimUyeleri.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxOgretimUyeleri.TabIndex = 30;
+            this.comboBoxOgretimUyeleri.SelectedIndexChanged += new System.EventHandler(this.comboBoxOgretimUyeleri_SelectedIndexChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label6.Location = new System.Drawing.Point(13, 173);
+            this.label6.Location = new System.Drawing.Point(13, 223);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 39;
             this.label6.Text = "Ders Kodu:";
             // 
-            // textBoxSoyadi
+            // textBoxKodu
             // 
-            this.textBoxSoyadi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.textBoxSoyadi.Location = new System.Drawing.Point(149, 174);
-            this.textBoxSoyadi.MaxLength = 4;
-            this.textBoxSoyadi.Name = "textBoxSoyadi";
-            this.textBoxSoyadi.ReadOnly = true;
-            this.textBoxSoyadi.Size = new System.Drawing.Size(100, 20);
-            this.textBoxSoyadi.TabIndex = 26;
+            this.textBoxKodu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.textBoxKodu.Location = new System.Drawing.Point(149, 220);
+            this.textBoxKodu.MaxLength = 4;
+            this.textBoxKodu.Name = "textBoxKodu";
+            this.textBoxKodu.ReadOnly = true;
+            this.textBoxKodu.Size = new System.Drawing.Size(150, 20);
+            this.textBoxKodu.TabIndex = 26;
             // 
             // btnOgrenciyiEkle
             // 
             this.btnOgrenciyiEkle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.btnOgrenciyiEkle.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOgrenciyiEkle.Location = new System.Drawing.Point(12, 380);
+            this.btnOgrenciyiEkle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.09346F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnOgrenciyiEkle.Location = new System.Drawing.Point(16, 364);
             this.btnOgrenciyiEkle.Name = "btnOgrenciyiEkle";
-            this.btnOgrenciyiEkle.Size = new System.Drawing.Size(238, 58);
+            this.btnOgrenciyiEkle.Size = new System.Drawing.Size(283, 58);
             this.btnOgrenciyiEkle.TabIndex = 36;
             this.btnOgrenciyiEkle.Text = "Kaydet";
             this.btnOgrenciyiEkle.UseVisualStyleBackColor = false;
+            this.btnOgrenciyiEkle.Click += new System.EventHandler(this.btnOgrenciyiEkle_Click);
             // 
             // textBoxAdi
             // 
@@ -124,14 +126,14 @@ namespace FakulteYonetimPaneli
             this.textBoxAdi.Location = new System.Drawing.Point(149, 82);
             this.textBoxAdi.MaxLength = 50;
             this.textBoxAdi.Name = "textBoxAdi";
-            this.textBoxAdi.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAdi.Size = new System.Drawing.Size(150, 20);
             this.textBoxAdi.TabIndex = 25;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label5.Location = new System.Drawing.Point(13, 274);
+            this.label5.Location = new System.Drawing.Point(13, 177);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(106, 13);
             this.label5.TabIndex = 37;
@@ -151,7 +153,7 @@ namespace FakulteYonetimPaneli
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.label2.Location = new System.Drawing.Point(12, 224);
+            this.label2.Location = new System.Drawing.Point(13, 272);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(137, 13);
             this.label2.TabIndex = 31;
@@ -167,27 +169,28 @@ namespace FakulteYonetimPaneli
             this.label1.TabIndex = 29;
             this.label1.Text = "Ders Adı*:";
             // 
-            // comboBox2
+            // comboBoxVerildigiBolum
             // 
-            this.comboBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(149, 127);
-            this.comboBox2.MaxDropDownItems = 2;
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(100, 21);
-            this.comboBox2.TabIndex = 45;
+            this.comboBoxVerildigiBolum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.comboBoxVerildigiBolum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxVerildigiBolum.FormattingEnabled = true;
+            this.comboBoxVerildigiBolum.Location = new System.Drawing.Point(149, 127);
+            this.comboBoxVerildigiBolum.MaxDropDownItems = 2;
+            this.comboBoxVerildigiBolum.Name = "comboBoxVerildigiBolum";
+            this.comboBoxVerildigiBolum.Size = new System.Drawing.Size(150, 21);
+            this.comboBoxVerildigiBolum.TabIndex = 45;
+            this.comboBoxVerildigiBolum.SelectedIndexChanged += new System.EventHandler(this.comboBoxVerildigiBolum_SelectedIndexChanged);
             // 
-            // comboBox3
+            // textBoxVerildigiSinif
             // 
-            this.comboBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(150, 271);
-            this.comboBox3.MaxDropDownItems = 2;
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(100, 21);
-            this.comboBox3.TabIndex = 46;
+            this.textBoxVerildigiSinif.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
+            this.textBoxVerildigiSinif.Location = new System.Drawing.Point(149, 174);
+            this.textBoxVerildigiSinif.MaxLength = 2;
+            this.textBoxVerildigiSinif.Name = "textBoxVerildigiSinif";
+            this.textBoxVerildigiSinif.Size = new System.Drawing.Size(150, 20);
+            this.textBoxVerildigiSinif.TabIndex = 46;
+            this.textBoxVerildigiSinif.TextChanged += new System.EventHandler(this.textBoxVerildigiSinif_TextChanged);
+            this.textBoxVerildigiSinif.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxVerildigiSinif_KeyPress);
             // 
             // FormDersEkle
             // 
@@ -195,14 +198,14 @@ namespace FakulteYonetimPaneli
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(57)))), ((int)(((byte)(62)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(876, 516);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.textBoxVerildigiSinif);
+            this.Controls.Add(this.comboBoxVerildigiBolum);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.textBoxBolum2OgrNo);
+            this.Controls.Add(this.textBoxKredi);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBoxOgretimUyeleri);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBoxSoyadi);
+            this.Controls.Add(this.textBoxKodu);
             this.Controls.Add(this.btnOgrenciyiEkle);
             this.Controls.Add(this.textBoxAdi);
             this.Controls.Add(this.label5);
@@ -211,6 +214,7 @@ namespace FakulteYonetimPaneli
             this.Controls.Add(this.label1);
             this.Name = "FormDersEkle";
             this.Text = "FormDersEkle";
+            this.Load += new System.EventHandler(this.FormDersEkle_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,18 +223,18 @@ namespace FakulteYonetimPaneli
         #endregion
 
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBoxBolum2OgrNo;
+        private System.Windows.Forms.TextBox textBoxKredi;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBoxOgretimUyeleri;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBoxSoyadi;
+        private System.Windows.Forms.TextBox textBoxKodu;
         private System.Windows.Forms.Button btnOgrenciyiEkle;
         private System.Windows.Forms.TextBox textBoxAdi;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBoxVerildigiBolum;
+        private System.Windows.Forms.TextBox textBoxVerildigiSinif;
     }
 }
